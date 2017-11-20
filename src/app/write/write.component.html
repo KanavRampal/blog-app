@@ -1,0 +1,61 @@
+<div class="column">
+    <table>
+        <thead>
+          <tr>
+              <th>Title</th>
+              <th>Buttons</th>
+          </tr>
+        </thead>
+
+        <tbody *ngFor='let blog of blogs;let index = i'>
+          
+            <tr *ngIf='blog.author==currentUser.id'>
+              <td>{{blog.title}}</td>
+              <td><button (click)=' editButtonPressed(i)'>Edit</button></td>
+            </tr>
+          
+        </tbody>
+      </table>
+</div>
+<h1 id="h1">Add New</h1>
+<div class="column">
+    <div class="col s12 m6">
+      <div class="card blue-grey ">
+        <div class="card-content white-text">
+          <span class="card-title">
+                  <input id="title" type="text" class="validate" placeholder='BlogTitle ....'>
+          </span>
+          <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea" placeholder="Start Writing...."></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>             
+        </div>
+        <div class="card-action">
+            <a class="waves-effect waves-teal btn-flat" (click)='saveButton()'>Save</a>
+            <a class="waves-effect waves-teal btn-flat" (click)='cancelButton()' >Cancel</a>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- <div class="row">
+  <div class="input-field col s6">
+  <input id="title" type="text" class="validate">
+  <label for="first_name">Title</label>
+</div>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <label for="textarea1">Textarea</label>
+      </div>
+    </div>
+  </form>
+</div>    -->

@@ -1,0 +1,20 @@
+<div class="row" style="width: 100%; margin: 0 auto;">
+    <div class="jumbotron" [hidden]="IsHidden" style="text-align: left">
+      <h1> Blogger</h1>
+      <p>username: user , password: user</p>
+      <div class="row">
+          <div class="input-field col s6">
+            <input value="" id="username" type="text" class="validate">
+            <label class="active" for="first_name2">Username</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s6">
+              <input id="password" type="password" class="validate">
+              <label class="active" for="password">Password</label>
+          </div>
+      </div>
+      
+      <input type="button" class="btn btn-primary btn-lg"  role="button" (click)="logIn()" value="LogIn"/>
+    </div>
+    </div>

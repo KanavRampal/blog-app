@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { LoginComponent } from './login/login.component';
+import { WriteComponent } from './write/write.component';
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -15,6 +17,14 @@ const routes: Routes = [
   {
     path: 'favourites',
     component: FavouritesComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'write',
+    component: WriteComponent
   }
 ];
 

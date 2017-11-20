@@ -8,7 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { AboutComponent } from './about/about.component';
 import { LayoutComponent } from './layout/layout.component';
-import { BlogServiceService } from './blog-service.service';
+import {HttpModule} from '@angular/http';
+import { BlogService } from './blog.service';
+import { FormsModule } from '@angular/forms';
+import { AuthenticationService } from './authentication.service';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { WriteComponent } from './write/write.component';
+
+
 
 @NgModule({
   declarations: [
@@ -16,15 +24,20 @@ import { BlogServiceService } from './blog-service.service';
     HomeComponent,
     FavouritesComponent,
     AboutComponent,
-    LayoutComponent
+    LayoutComponent,
+    LoginComponent,
+    WriteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpModule,
+    FormsModule
   ],
-  providers: [BlogServiceService],
+  exports: [ RouterModule],
+  providers: [BlogService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

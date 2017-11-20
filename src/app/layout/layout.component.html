@@ -3,10 +3,14 @@
     <span>My Blog Application</span>
 
     <span class="example-spacer"></span>
-    <a routerLink=""><button mat-button>Home</button></a>
-    <a routerLink="favourites"><button mat-button>Favourites</button></a>
-    <a routerLink="about"><button mat-button>About</button></a>
+    <div *ngIf="isLoggedIn()==true" >
+        <a routerLink="home"><button mat-button>Home</button></a>
+        <a routerLink="favourites"><button mat-button>Favourites</button></a>
+        <a routerLink="write"><button mat-button>Write</button></a>
+        <a routerLink="about"><button mat-button>About</button></a>
+      <button mat-button (click)='signout()'>Log Out</button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+
