@@ -40,11 +40,11 @@ export class HomeComponent implements OnInit {
   }
   do(i: number) {
     console.log(this.filteredBlogs[i]);
-    this.blogText = (this.filteredBlogs[i].body);
-    this.blogTitle = this.filteredBlogs[i].title;
+    this.blogText = (this.filteredBlogs[i]['body']);
+    this.blogTitle = this.filteredBlogs[i]['title'];
   }
   markFav(i: number) {
-    console.log('marked as fav' + this.filteredBlogs[i]);
-    
+    console.log('marked as fav' + i);
+    const localStorageObj = JSON.parse(localStorage.getItem('currentUser'));
   }
 }

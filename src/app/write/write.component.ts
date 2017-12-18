@@ -29,22 +29,21 @@ export class WriteComponent implements OnInit {
   } 
   saveButton(){
 
-    var title = document.getElementById('title');
-    var textArea = document.getElementById('textarea1');
+    var title = <HTMLInputElement>document.getElementById('title');
+    var textArea = <HTMLInputElement>document.getElementById('textarea1');
     const blog = {
-      title: title.value;
-      body: textArea.value;
-      author: this.currentUser['id'];
-      authorName: this.currentUser['username'];
+      title: title.value ,
+      body: textArea.value,
+      author: this.currentUser['id'],
+      authorName: this.currentUser['username']
     };
     if ( (textArea.value == '') || (title.value == '')){
       alert("Title and Body can't be empty");
     }
     else{
-      this.request.postData(blog).subscribe(data => {this.blogs.push(data) });
+      this.request.postData(blog).subscribe(data => {this.blogs.push(data)});
       window.location.reload();
     }
+  
   }
-  }
-   
 }

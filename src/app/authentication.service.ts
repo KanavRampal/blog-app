@@ -3,7 +3,7 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-const BASE_URL = 'http://localhost:3000/users/';
+const BASE_URL = 'https://blog-app-backend.herokuapp.com/users/';
 const header = {headers: new Headers({'Content-Type': 'application/json'})};
 
 @Injectable()
@@ -21,7 +21,7 @@ export class AuthenticationService {
           console.log(authUser);
         }
         return authUser;
-      })
+      });
 
   }
 

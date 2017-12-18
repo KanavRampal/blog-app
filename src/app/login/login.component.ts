@@ -15,12 +15,11 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService) {}
     logIn() {
-      var userName = document.getElementById('username');
-      var password = document.getElementById('password');
-      console.log(userName.value);
-      console.log(password.value);
-      this.loading = true;
-      this.authenticationService.login(username.value, password.value)
+      const userName = document.getElementById('username');
+      const password = document.getElementById('password');
+      console.log(userName['value']);
+      console.log(password['value']);
+      this.authenticationService.login(userName['value'], password['value'])
         .subscribe(
           data => {
             if (data) {
@@ -29,16 +28,15 @@ export class LoginComponent implements OnInit {
               console.log('Login Success');
               this.returnUrl = 'layout';
               this.router.navigate(['home']);
-              window.location.reload();
+              // window.location.reload();
             } else {
               alert('Incorrect Username/Password!');
-              window.location.reload();
+              // window.location.reload();
             }
           },
           error => {
-            this.loading = false;
             console.log('Error');
-            window.location.reload();
+            // window.location.reload();
           });
         }
   ngOnInit() {

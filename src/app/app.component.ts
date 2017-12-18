@@ -11,7 +11,7 @@ export class AppComponent implements OnInit  {
 
   }
   ngOnInit() {
-    var user = (localStorage.getItem('currentUser') ;
+    var user = (localStorage.getItem('currentUser') ) ;
     console.log(user);
     if (user == null) {
       // console.log("in if");
